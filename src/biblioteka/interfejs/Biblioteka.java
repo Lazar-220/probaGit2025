@@ -6,7 +6,8 @@ import java.util.List;
 import biblioteka.Knjiga;
 
 public class Biblioteka implements BibliotekaInterface {
-//greska
+//uspeh
+	//ova lista je implementirana kao arraylist zbog ceste pretrage 
 	List<Knjiga>knjige=new ArrayList<>();
 	
 	@Override
