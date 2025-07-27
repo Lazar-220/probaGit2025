@@ -26,6 +26,9 @@ public class Biblioteka implements BibliotekaInterface {
 
 	@Override
 	public List<Knjiga> pronadjiKnjigu(Knjiga knjiga) {
+		if(knjiga.getAutori()==null&&knjiga.getIsbn()<=0&&knjiga.getNaslov()==null&&knjiga.getIzdavac()==null) {
+			return knjige;
+		}
 		List<Knjiga>lista=new ArrayList<Knjiga>();
 		for(Knjiga k: knjige) {
 			if(k.getNaslov().toLowerCase().contains(knjiga.getNaslov().toLowerCase())) {
