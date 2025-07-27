@@ -3,6 +3,7 @@ package biblioteka.interfejs;
 import java.util.ArrayList;
 import java.util.List;
 
+import biblioteka.Autor;
 import biblioteka.Knjiga;
 
 public class Biblioteka implements BibliotekaInterface {
@@ -44,10 +45,27 @@ public class Biblioteka implements BibliotekaInterface {
 
 		}
 		List<Knjiga>lista=new ArrayList<Knjiga>();
-		for(Knjiga k: knjige) {
-			if(k.getNaslov().toLowerCase().contains(knjiga.getNaslov().toLowerCase())) {
-				lista.add(k);
-				return lista;
+		if(knjiga.getNaslov()!=null) {
+			for(Knjiga k: knjige) {
+				if(k.getNaslov().toLowerCase().contains(knjiga.getNaslov().toLowerCase())) {
+					lista.add(k);
+				}
+			}
+			
+		}else{
+			boolean signal=true;
+			for(Knjiga k: knjige) {
+				for(Autor a:knjiga.getAutori()) {
+					if(!k.getAutori().contains(a)) {
+						signal=false;
+						break;
+					}
+				}
+				if(signal==true) {
+					lista.add(k);
+				}else {
+					signal=true;
+				}
 			}
 		}
 		return lista;
