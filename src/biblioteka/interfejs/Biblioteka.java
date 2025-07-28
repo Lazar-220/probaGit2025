@@ -9,6 +9,7 @@ import biblioteka.Knjiga;
 public class Biblioteka implements BibliotekaInterface {
 
 	//provera push/pull-a
+	//provera perinog eclipse-a
 	//ova lista je implementirana kao arraylist zbog ceste pretrage 
 
 	List<Knjiga>knjige=new ArrayList<>();
